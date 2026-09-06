@@ -40,10 +40,11 @@ spec:
   rules:
   - host: webcolor.exemple.com
     http:
-      paths: /
-      pathType: Prefix
-      backend: 
-        service:
-          name: webpage
-          port:
-            number: 80    
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+              name: webpage
+              port:
+                number: 80    
