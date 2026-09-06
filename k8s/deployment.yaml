@@ -44,6 +44,6 @@ spec:
       pathType: Prefix
       backend: 
         service:
-          name: webcolor
+          name: webpage
           port:
             number: 80    
