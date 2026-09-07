@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: mongodb
   annotations:
-    argo.argoproj.io/sync-wave: -1 # vai do menor para o maior.  Significa que ele vai fazer esse deployment primeiro, antes do deployment da aplicação em si, que depende do mongo.
+    argo.argoproj.io/sync-wave: "-1" # vai do menor para o maior.  Significa que ele vai fazer esse deployment primeiro, antes do deployment da aplicação em si, que depende do mongo.
 spec:
   selector:
     matchLabels:
@@ -29,7 +29,7 @@ kind: Service
 metadata:
   name: mongodb-service
   annotations:
-    argo.argoproj.io/sync-wave: -1
+    argo.argoproj.io/sync-wave: "-1"
 spec:
   selector:
     app: mongodb
@@ -43,7 +43,7 @@ kind: Deployment
 metadata:
   name: movies
   annotations:
-    argo.argoproj.io/sync-wave: 0
+    argo.argoproj.io/sync-wave: "0"
 spec:
   selector:
     matchLabels:
@@ -75,7 +75,7 @@ kind: Service
 metadata:
   name: movies
   annotations:
-    argo.argoproj.io/sync-wave: 0
+    argo.argoproj.io/sync-wave: "0"
 spec:
   selector:
     app: movies
